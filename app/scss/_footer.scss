@@ -1,0 +1,62 @@
+.footer {
+    background: $veryDarkBlue;
+    text-align: center;
+    a {
+        margin-bottom: 1.4rem;
+        color: $grayishBlue;
+        transition: $tran;
+        &:hover {
+            color: $grayishGreen;
+        }
+    }
+    &__grid {
+        @include breakpoint-up(large) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    &__item {
+        @include breakpoint-up(large) {
+            flex: 1;
+            text-align: left;
+            &:last-child {
+                flex: 2;
+                text-align: right;
+            }
+        }
+    }
+    &__logo {
+        margin-bottom: 1.5rem;
+        @include breakpoint-up(large) {
+            margin-bottom: 3.3rem;
+        }
+    }
+    &__social {
+        margin-bottom: 1.5rem;
+        a {
+            &:not(:last-child) {
+                margin-right: .8rem
+            }
+            i {
+                font-size: $font-sm;
+            }
+        }
+        @include breakpoint-up(large) {
+            align-self: end;
+        }
+    }
+    &__link {
+        display: block;
+    }
+    &__btn {
+        @include breakpoint-up(large) {
+            margin-bottom: 1.5rem;
+        }
+        a {
+            color: white;
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}

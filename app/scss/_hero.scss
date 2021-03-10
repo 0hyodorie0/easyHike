@@ -1,0 +1,40 @@
+.hero {
+    background: $lightWhite;
+    .container {
+        @include breakpoint-up(large) {
+            display: flex;
+            align-items: center;
+        }
+    }
+    &__image {
+        height: 25rem;
+        overflow: hidden;
+        @include breakpoint-up(large) {
+            overflow: unset;
+            height: 48.75rem;
+            flex: 3;
+            order: 2;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            transform-origin: center;
+            @include breakpoint-up(large) {
+                height: 100%;
+                width: auto;
+                right: 0;
+            }
+        }
+    }
+    &__text {
+        text-align: center;
+        @include breakpoint-up(large) {
+            flex: 2;
+            order: 1;
+            text-align: left;
+        }
+        h1 {
+            line-height: 1;
+        }
+    }
+}

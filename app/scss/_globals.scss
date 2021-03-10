@@ -1,0 +1,149 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: $font-tn;
+    color: $grayishBlue;
+    // &.no-scroll {
+    //     overflow-y: hidden;
+    // }
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+    color: $darkBlue;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: $font-lg;
+    @include breakpoint-up(large) {
+        font-size: $font-xlg;
+    }
+}
+
+h2 {
+    font-size: $font-md;
+    @include breakpoint-up(large) {
+        font-size: $font-lg;
+    }
+}
+
+h3 {
+    font-size: $font-sm;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    &--pall {
+        padding: 3rem 2.3rem;
+    }
+    &--px {
+        padding-right: 2.3rem;
+        padding-left: 2.3rem;
+    }
+    &--py {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    &--pt {
+        padding-top: 3rem;
+    }
+    &--pr {
+        padding-right: 2.3rem;
+    }
+    &--pb {
+        padding-bottom: 3rem;
+    }
+    &--pl {
+        padding-left: 2.3rem;
+    }
+}
+
+.flex {
+    display: flex;
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-sc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+button,
+.button {
+    position: relative;
+    display: inline-block;
+    padding: .77rem 2rem;
+    background: $gradient;
+    background-clip: padding-box;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: .7rem;
+    cursor: pointer;
+    transition: all .5s ease;
+    &::after {
+        position: absolute;
+        content: "Subscribe Me!";
+        padding: .77rem 2rem;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $gradient2;
+        border-radius: .7rem;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+    }
+    &:hover {
+        box-shadow: $shadow2;
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -2px;
+    color: $grayishGreen;
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
